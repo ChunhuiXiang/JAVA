@@ -1,0 +1,36 @@
+package test;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
+public class Doudizhu {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+    int numHands=Integer.parseInt(args[0]);
+    int cardsPersonHand=Integer.parseInt(args[1]);
+    String[] suit=new String[]{"黑桃","红心","方块","梅花"};
+    String[] rank=new String[]{"A","1","2","3","4","5","6","7","8","9","10","j","q","k"};
+    List<String> deck=new ArrayList<String>();
+    for(int i=0;i<suit.length;i++){
+    	for(int j=0;j<rank.length;j++){
+    		deck.add(suit[i]+rank[j]);
+    	}
+    }
+    Collections.shuffle(deck);
+    for(int i=0;i<numHands;i++){
+    	System.out.print(dealHand(deck,cardsPersonHand));
+    }
+    
+	}
+   
+	//生成一手牌的方法
+    public static <E> List<E> dealHand(List<E> deck,int n){
+    	int deckSize=deck.size();
+    	List<E> handView=deck.subList(deckSize-n, deckSize);
+    	List<E> hand=new ArrayList<E>(handView);
+    	handView.clear();
+    	return hand;
+    }
+}
