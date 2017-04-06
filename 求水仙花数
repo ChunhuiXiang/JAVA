@@ -1,0 +1,32 @@
+
+
+import java.util.Scanner;
+
+public class ScanInput {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int q[]=new int[4];
+		
+        Scanner in=new Scanner(System.in);
+        int a=in.nextInt();
+        int b=in.nextInt();
+
+if(a>100&&b<1000&&a<b){
+	for(int j=a;j<b;j++){
+		int gew=j%10;
+		int shw=j/10%10;
+		int baw=j/100;
+		int k=gew*gew*gew+shw*shw*shw+baw*baw*baw;
+		if(j== k){
+			System.out.println(j);
+		}
+		else{}
+	}
+}
+      
+		}
+        
+	}
+
+
