@@ -1,0 +1,46 @@
+public class Whilexuanhuan {
+
+	public static void main(String[] args) {
+int[] array1=new int[]{123,1,2,34,567,7890};
+	//求取数组最大值
+	int max=array1[0];
+    int[] b=new int[array1.length];  
+	for(int q=0;q<array1.length;q++){
+		if(array1[q]>max){
+			max=array1[q];
+		}
+	}
+	System.out.print("最大数为"+max);
+	//求出最高位数
+    while(max>0){
+    max/=10;
+    	weishu++;
+    }    
+    System.out.println("最高位数是\n"+weishu); 
+    for(int j=0;j<weishu;j++){
+    	for(int h=0;h<array1.length;h++){
+     b[h]=array1[h]%(int)Math.pow(10,j+1)/(int)Math.pow(10, j);//求取一个数字的子关键字
+    	}
+    	System.out.println("第"+(j+1)+"位数字是"+Arrays.toString(b));
+    	//桶排序法
+    	int[] tong=new int[10];
+    	 for(int w=0;w<10;w++){
+    	for(int u=0;u<b.length;u++){
+    		if(b[u]==w){
+    			tong[w]+=1;
+    		}
+    	}}
+    	 
+    	for(int i1=0;i1<10;i1++){
+
+                 for(int i3=0;i3<b.length;i3++){
+                	 if(b[i3]==i1&&b[i3]==array1[i3]%(int)Math.pow(10,j+1)/(int)Math.pow(10, j)){
+                		    
+                			System.out.print("\n"+array1[i3]);
+                	 }
+                 }
+    		}
+    	}
+    
+    	 }
+    
